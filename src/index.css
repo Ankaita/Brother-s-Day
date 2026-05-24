@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Architects+Daughter&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-handwritten: "Caveat", "Architects Daughter", cursive;
+
+  --color-brand-pink: #ffdde2;
+  --color-brand-cream: #fdfbf7;
+  --color-brand-brown: #5d4037;
+  --color-brand-emerald: #1b5e20;
+  --color-brand-gold: #c5a059;
+}
+
+/* Custom noise overlay to simulate paper grain */
+.paper-grain {
+  background-image: radial-gradient(rgba(93, 64, 55, 0.05) 1px, transparent 0),
+                    radial-gradient(rgba(255, 221, 226, 0.1) 1px, transparent 0);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+}
+
+/* Immersive background style */
+.immersive-bg-gradient {
+  background-color: #fdfbf7;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 221, 226, 0.35) 0%, transparent 70%);
+}
+
+/* Subtle crinkle texture effect using linear gradients */
+.crinkle-texture {
+  background-image: 
+    linear-gradient(105deg, rgba(255,255,255,0.07) 39%, rgba(0,0,0,0.02) 41%, rgba(255,255,255,0.1) 43%, rgba(255,255,255,0) 45%),
+    linear-gradient(170deg, rgba(255,255,255,0) 45%, rgba(0,0,0,0.015) 47%, rgba(255,255,255,0.08) 49%, rgba(255,255,255,0) 51%),
+    linear-gradient(15deg, rgba(255,255,255,0) 20%, rgba(0,0,0,0.01) 22%, rgba(255,255,255,0.05) 24%, rgba(255,255,255,0) 26%);
+  background-color: #fdfbf7;
+}
+
+/* Handwriting line background design */
+.letter-writing-lines {
+  background-image: linear-gradient(rgba(93, 64, 55, 0.04) 1px, transparent 1px);
+  background-size: 100% 34px;
+  line-height: 34px;
+}
+
+/* Custom styling to hide scrollbars with non-scrolling design */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background-color: #fdfbf7;
+  color: #5d4037;
+}
+
+/* Elegant handwriting style for the text */
+.handwriting-text {
+  font-family: 'Caveat', cursive;
+}
+
+/* Floating particle keyframes with custom variables */
+@keyframes float-up {
+  0% {
+    transform: translateY(105vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--opacity, 0.5);
+  }
+  95% {
+    opacity: var(--opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(var(--drift, 40px)) rotate(var(--rotation, 360deg));
+    opacity: 0;
+  }
+}
+
+.particle-float {
+  position: absolute;
+  bottom: -40px;
+  pointer-events: none;
+  animation: float-up var(--duration, 12s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Soft transition button styles matching the Immersive theme specification */
+.btn-soft {
+  background-color: #ffdde2;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 30px;
+  color: #5d4037;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.btn-soft:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #fecdd6;
+}
+.btn-soft:active {
+  transform: translateY(0) scale(0.98);
+}
+
+

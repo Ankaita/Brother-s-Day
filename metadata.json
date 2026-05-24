@@ -1,0 +1,6 @@
+{
+  "name": "Happy Brother's Day",
+  "description": "A soft-aesthetic, interactive digital envelope and handwritten letter for Joy Dada from Lumine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
